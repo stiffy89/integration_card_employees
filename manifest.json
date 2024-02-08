@@ -1,0 +1,58 @@
+{
+	"_version": "1.14.0",
+	"sap.app": {
+		"id": "ns.suppliers_card",
+		"type": "card",
+		"title": "Suppliers Card",
+		"subTitle": "UI5 suppliers card",
+		"applicationVersion": {
+			"version": "1.0.0"
+		}
+	},
+	"sap.ui": {
+		"technology": "UI5",
+        "deviceTypes": {"desktop": true, "phone": true, "tablet": true},
+		"icons": {
+			"icon": "sap-icon://list"
+		}
+	},
+	"sap.card": {
+		"type": "List",
+        "designtime": "dt/configuration",
+		"configuration":{
+			"destinations": {
+				"ES5": {
+					"name" : "ES5",
+					"defaultUrl" : "/sap/opu/odata/iwbep/GWSAMPLE_BASIC/"
+				}
+			}
+		},
+		"data": {
+			"request" : {
+				"url" : "{{destinations.ES5}}/sap/opu/odata/iwbep/GWSAMPLE_BASIC/ContactSet",
+				"withCredentials": true
+			},
+			"path" : "/d/results"
+		},
+		"header": {
+			"title": "Employees List card",
+			"subTitle": "Employees and their phone numbers",
+			"icon": {
+				"src": "sap-icon://desktop-mobile"
+			},
+			"status": {
+				"text": "5 of 20"
+			}
+		},
+		"content": {
+			"item": {
+                "title": "{FirstName} {LastName}",
+                "description": "{PhoneNumber}"
+            },
+            "maxItems": 5
+		}
+	},
+    "sap.platform.mobilecards": {
+        "compatible": false
+    }
+}
