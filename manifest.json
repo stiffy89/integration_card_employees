@@ -22,8 +22,7 @@
 		"configuration":{
 			"destinations": {
 				"ES5": {
-					"name" : "ES5",
-					"defaultUrl" : "/sap/opu/odata/iwbep/GWSAMPLE_BASIC/"
+					"name" : "ES5"
 				}
 			}
 		},
